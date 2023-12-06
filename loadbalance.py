@@ -81,4 +81,4 @@ def server(input: Inputs, output: Outputs, session: Session):
 app = App(app_ui, server)
 
 if __name__ == "__main__":
-  uvicorn.run("app:app",host="0.0.0.0",port=8888)
+  uvicorn.run("loadbalance:app",host="0.0.0.0",port=8888)
