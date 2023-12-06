@@ -1,4 +1,4 @@
-# shiny
+# Python Shiny Apps
 
 There are two example apps, both taken from https://github.com/posit-dev/py-shiny/tree/7ba8f90a44ee25f41aa8c258eceeba6807e0017a/examples
 
