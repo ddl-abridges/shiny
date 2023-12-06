@@ -1,5 +1,13 @@
 from shiny import *
 import starlette.responses
+import uvicorn
+import os
+
+runID = os.environ['DOMINO_RUN_ID']
+userID = os.environ['DOMINO_PROJECT_OWNER']
+projectID = os.environ['DOMINO_PROJECT_NAME']
+
+path_prefix = f"/{userID}/{projectID}/r/notebookSession/{runID}"
 
 app_ui = ui.page_fluid(
     ui.markdown(
@@ -79,6 +87,8 @@ def server(input: Inputs, output: Outputs, session: Session):
 
 
 app = App(app_ui, server)
+
+print(path_prefix)
 
 if __name__ == "__main__":
   uvicorn.run("loadbalance:app",host="0.0.0.0",port=8888)
